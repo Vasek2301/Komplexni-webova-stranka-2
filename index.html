@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Václav Cieslar -->
+  <!-- cieslar.vaclav@gmail.com -->
+  <!-- Vašek86 -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="query-style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <img src="img/pngwing.com.png" alt="Logo" />
+      </div>
+
+      <div class="mode-container">
+        <label>
+          <input type="checkbox" id="toggle" hidden />
+          <button
+            class="theme-toggle"
+            onclick="document.body.classList.toggle('dark-mode');"
+          >
+            <span class="icon-light">🌞</span>
+            <!-- Ikona slunce pro světlý režim -->
+            <span class="icon-dark">🌜</span>
+            <!-- Ikona měsíce pro tmavý režim -->
+          </button>
+        </label>
+      </div>
+
+      <div>
+        <nav>
+          <ul>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">DISCOGRAPHY</a></li>
+            <li><a href="#">THE BAND</a></li>
+            <li><a href="#">TOUR</a></li>
+            <li><a href="#">SHOP</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+        <!-- <i class="fa-solid fa-xmark"></i> -->
+      </div>
+    </header>
+
+    <section>
+      <div class="welcome"></div>
+    </section>
+    <br />
+
+    <!-- COUNTDOWN -->
+    <div class="countdown-wrapper">
+      <div class="new-album">
+        <h6>NEW ALBUM</h6>
+      </div>
+      <p id="countdown" class="countdown"></p>
+    </div>
+    <br />
+
+    <!-- GALERY -->
+    <div class="gallery-wrapper">
+      <div class="gallery-container">
+        <div class="gallery-row">
+          <div class="gallery-item">
+            <img
+              src="img/ab67616d0000b273d400d27cba05bb0545533864.jpg"
+              alt="Photo 1"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="img/311223924_560860016041542_7983275985214422062_n-1.jpg"
+              alt="Photo 2"
+            />
+          </div>
+          <div class="gallery-item">
+            <img src="img/pearl-jam-binaural.jpg" alt="Photo 3" />
+          </div>
+        </div>
+
+        <div class="middle-container">
+          <div class="gallery-item">
+            <img src="img/avokado.jpg" alt="Photo 4" />
+          </div>
+          <div class="gallery-text">DISCOGRAPHY</div>
+          <div class="gallery-item">
+            <img src="img/R-2016772-1258747673.jpg" alt="Photo 5" />
+          </div>
+        </div>
+
+        <div class="gallery-row">
+          <div class="gallery-item">
+            <img src="img/Pearl_Jam_Lightning_Bolt.jpg" alt="Photo 6" />
+          </div>
+          <div class="gallery-item">
+            <img src="img/gigation2020.jpg" alt="Photo 7" />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="img/Dark-Matter-Album-Artwork-Pearl-Jam.jpg"
+              alt="Photo 8"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="form-container">
+      <div class="login-container">
+        <form id="loginForm" onsubmit="return validateForm()">
+          <h1>Login</h1>
+
+          <div class="inputField">
+            <div class="fieldWrap">
+              <label for="nickname">Nickname</label>
+              <input type="text" id="nickname" value="" />
+            </div>
+            <span id="nicknameMsg" class="errorMsg"></span>
+          </div>
+
+          <div class="inputField">
+            <div class="fieldWrap">
+              <label for="pswd1">Create Password</label>
+              <input
+                type="password"
+                id="pswd1"
+                value=""
+                onkeyup="validatePasswordMatch()"
+              />
+              <button
+                type="button"
+                onclick="togglePasswordVisibility('pswd1')"
+                class="eyeButton"
+              >
+                <img
+                  src="img/eye-icon.png"
+                  alt="Show/Hide Password"
+                  class="eye-icon"
+                />
+              </button>
+            </div>
+            <span id="message1" class="errorMsg"></span>
+          </div>
+
+          <div class="inputField">
+            <div class="fieldWrap">
+              <label for="pswd2">Confirm Password</label>
+              <input
+                type="password"
+                id="pswd2"
+                value=""
+                onkeyup="validatePasswordMatch()"
+              />
+              <button
+                type="button"
+                onclick="togglePasswordVisibility('pswd2')"
+                class="eyeButton"
+              >
+                <img
+                  src="img/eye-icon.png"
+                  alt="Show/Hide Password"
+                  class="eye-icon"
+                />
+              </button>
+            </div>
+            <span id="message2" class="errorMsg"></span>
+          </div>
+
+          <button type="submit">Log In</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-contact">Contact me</div>
+        <div class="footer-icons">
+          <a href="#" class="mail-icon"><i class="fas fa-envelope"></i></a>
+          <a href="#" class="facebook-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="twitter-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="instagram-icon"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <div class="footer-create">&copy; 2024 Václav Cieslar</div>
+      </div>
+    </footer>
+
+    <!-- UP BUTTON -->
+    <div id="scrollToTopButton" class="up">
+      <img src="img/up-arrow-png-27174.png" alt="Scroll to top" />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
